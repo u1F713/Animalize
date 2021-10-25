@@ -9,17 +9,16 @@ const Gallery: FunctionComponent<GalleryProps> = ({
   galleryList,
 }): JSX.Element => {
   return (
-    <main id="gallery">
-      <section>
-        {galleryList.map((item: GalleryItemProps) => (
+    <main id="Gallery">
+      {galleryList.map((item: GalleryItemProps) => (
+        <section className="gallery-d" key={item.id}>
           <GalleryItem
             id={item.id}
             pictureSrc={item.pictureSrc}
             alternativeText={item.alternativeText}
-            key={item.id}
           />
-        ))}
-      </section>
+        </section>
+      ))}
     </main>
   );
 };

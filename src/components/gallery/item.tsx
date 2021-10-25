@@ -9,11 +9,11 @@ const GalleryItem: FunctionComponent<GalleryItemProps> = ({
   alternativeText,
 }) => {
   return (
-    <div>
+    <div className="gallery-item">
       <figure>
         <Image
-          height={300}
-          width={300}
+          width={330}
+          height={500}
           src={pictureSrc}
           alt={alternativeText}
         />

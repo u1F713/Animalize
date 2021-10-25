@@ -1,5 +1,33 @@
 body
   background-color: $main-bg
 
-#Gallery 
+.display-title
+  font-size: 3.4em
+  text-align: center
+  color: $main-fg
+  padding-top: 0.4em
+
+#Gallery
   display: flex
+  flex-flow: column wrap
+  justify-content: center
+  align-items: center
+  gap: 1em
+  padding-top: 4em
+
+  .gallery-d
+    border-radius: 5px
+    overflow: hidden
+
+  .gallery-item
+    display: flex
+    height: 500px
+    overflow: hidden
+
+    img
+      object-fit: cover
+      transition: 300ms
+      border-radius: 5px
+
+      &:hover
+        transform: scale(1.2)

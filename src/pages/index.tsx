@@ -1,9 +1,12 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { ActionCreators, State } from '../states';
 import Gallery from '../components/gallery';
+import Layout from '../components/layout';
+import loadGallery from '../utils/loadGallery';
 
 export const getStaticProps = async () => {
-  const galleryData = await (
-    await fetch('http://localhost:3000/api/gallery')
-  ).json();
+  const galleryData = loadGallery();
   return {
     props: {
       gallery: {
@@ -14,5 +17,14 @@ export const getStaticProps = async () => {
 };
 
 export default function Home({ gallery }) {
-  return <Gallery galleryList={gallery.data} />;
+  const dispath = useDispatch();
+  const { setGalleryItems } = bindActionCreators(ActionCreators, dispath);
+  const galleryList = useSelector((state: State) => state.gallery);
+  setGalleryItems(gallery.data);
+
+  return (
+    <Layout>
+      <Gallery galleryList={galleryList} />
+    </Layout>
+  );
 }

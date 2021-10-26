@@ -6,7 +6,7 @@ import Layout from '../components/layout';
 import loadGallery from '../utils/loadGallery';
 
 export const getStaticProps = async () => {
-  const galleryData = await loadGallery();
+  const galleryData = await loadGallery(25);
 
   return {
     props: {

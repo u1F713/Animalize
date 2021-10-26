@@ -9,7 +9,11 @@ const storage = (): void => {
   });
 };
 
-const apiSearch = async (data: { type: string; prefix: string }) => {
+const apiSearch = async (data: {
+  type: string;
+  prefix: string;
+  max_results: number;
+}) => {
   storage();
   let result = await cloudinary.v2.api.resources(data);
   result = result.resources.map((item) => item.secure_url);

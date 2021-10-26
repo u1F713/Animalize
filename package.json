@@ -1,6 +1,6 @@
 {
   "name": "animalize",
-  "version": "0.2.12",
+  "version": "0.3.22",
   "private": true,
   "scripts": {
     "dev": "next dev",

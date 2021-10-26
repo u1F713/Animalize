@@ -1,4 +1,5 @@
 enum ActionType {
-  GET = 'getGallery',
+  SET = 'set',
+  MODAl_SET = 'modal set',
 }
 export default ActionType;

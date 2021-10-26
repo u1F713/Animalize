@@ -20,7 +20,7 @@ export const getStaticProps = async () => {
 export default function Home({ gallery }) {
   const dispath = useDispatch();
   const { setGalleryItems } = bindActionCreators(ActionCreators, dispath);
-  // const galleryList = useSelector((state: State) => state.gallery);
+
   setGalleryItems(gallery.data);
 
   return (

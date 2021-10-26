@@ -1,8 +1,9 @@
 import { ImageItemDto } from '../../common/gallery.dto';
+import { ModalDto } from '../../common/modal.dto';
 import ActionType from './actions-types';
 
 interface setGallery {
-  type: ActionType.GET;
+  type: ActionType.SET;
   payload: ImageItemDto[];
 }
 
@@ -11,5 +12,10 @@ interface setGallery {
 //   payload: number;
 // }
 
-type Actions = setGallery;
-export default Actions;
+interface setModal {
+  type: ActionType.MODAl_SET;
+  payload: ModalDto;
+}
+
+export type GalleryActions = setGallery;
+export type ModalActions = setModal;

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import loadGallery from '../../utils/loadGallery';
+import loadGallery from '../../../utils/loadGallery';
 
 // get static images
 const handler = (req: Request, res: Response): Response => {

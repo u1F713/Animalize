@@ -1,6 +1,27 @@
 body
   background-color: $main-bg
 
+.fullscreen-container
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  display: flex
+  direction: column
+  align-items: center
+  justify-content: center
+  z-index: 99
+  background-color: rgba(0, 0, 0, 0.5)
+
+
+.container
+  display: flex
+  justify-content: center
+  align-items: center
+  max-width: 100%
+  padding: 2em 0
+
 .display-title
   font-size: 3.4em
   text-align: center
@@ -9,20 +30,20 @@ body
 
 #Gallery
   display: flex
-  flex-flow: column wrap
-  justify-content: center
-  align-items: center
-  gap: 1em
-  padding-top: 4em
+  justify-content: flex-start
+  gap: 0.5em
 
   .gallery-d
-    border-radius: 5px
-    overflow: hidden
+    display: inline-flex
+    flex-flow: column wrap
+    gap: 0.5em
 
   .gallery-item
     display: flex
-    height: 500px
+    max-height: 500px
+    max-width: 330px
     overflow: hidden
+    border-radius: 5px
 
     img
       object-fit: cover

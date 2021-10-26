@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --ext .tsx,.ts src"
+    "lint": "eslint --ext .tsx,.ts src",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "cloudinary": "^1.27.1",

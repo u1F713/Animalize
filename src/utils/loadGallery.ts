@@ -1,15 +1,18 @@
-import fs from 'fs';
 import { ImageItemDto } from '../common/gallery.dto';
+import apiSearch from './cloudinary.api';
 
-const loadGallery = (): ImageItemDto[] => {
-  const data: string[] = fs.readdirSync('public/gallery');
+const loadGallery = async (): Promise<ImageItemDto[]> => {
   const pictures = new Array<ImageItemDto>();
+  const data: string[] = await apiSearch({
+    type: 'upload',
+    prefix: 'gallery',
+  });
 
-  data.forEach((elm: string, index: number) => {
+  data.forEach((url: string, index: number) => {
     const pictureRestuct: ImageItemDto = {
       id: index,
-      pictureSrc: `/gallery/${elm}`,
-      alternativeText: elm,
+      pictureSrc: url,
+      alternativeText: url.split('/').pop(),
     };
     pictures.push(pictureRestuct);
   });

@@ -1,6 +1,7 @@
 import { FunctionComponent } from 'react';
 import Head from 'next/head';
 import Header from '../header';
+import Container from '../containers/container';
 
 const Layout: FunctionComponent = ({ children }): JSX.Element => {
   return (
@@ -10,7 +11,9 @@ const Layout: FunctionComponent = ({ children }): JSX.Element => {
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
       <Header />
-      <div>{children}</div>
+      <div>
+        <Container>{children}</Container>
+      </div>
     </>
   );
 };

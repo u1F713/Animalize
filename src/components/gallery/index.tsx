@@ -1,16 +1,16 @@
 import { FunctionComponent } from 'react';
 import { useSelector } from 'react-redux';
 import { State } from '../../states';
-import GalleryItem, { GalleryItemProps } from './item';
-import { slicer } from '../../utils/arraySlice';
+import GalleryItem from './item';
+import ReloadGallery from './gallery.service';
 
 export interface GalleryProps {
   columns: number;
 }
 
-const Gallery: FunctionComponent<GalleryProps> = ({ columns }): JSX.Element => {
+const Gallery: FunctionComponent<GalleryProps> = (): JSX.Element => {
   const galleryList = useSelector((state: State) => state.gallery);
-  const arrGalleryList = slicer<GalleryItemProps>(galleryList, columns);
+  const arrGalleryList = ReloadGallery(galleryList);
 
   return (
     <main id="Gallery">

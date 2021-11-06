@@ -14,7 +14,6 @@ body
   z-index: 99
   background-color: rgba(0, 0, 0, 0.5)
 
-
 .container
   display: flex
   justify-content: center
@@ -40,16 +39,21 @@ body
 
   .gallery-item
     display: flex
-    max-height: 500px
     max-width: 330px
     overflow: hidden
     border-radius: 5px
+    height: fit-content
 
     img
       object-fit: cover
       transition: 300ms
-      border-radius: 5px
       width: 100%
 
       &:hover
         transform: scale(1.2)
+
+@media (max-width: 604px)
+  #Gallery
+    .gallery-item
+      max-width: none
+      border-radius: 0

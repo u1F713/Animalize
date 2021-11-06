@@ -40,5 +40,6 @@ module.exports = {
     '@typescript-eslint/no-shadow': ['error'],
     'react/jsx-props-no-spreading': 'off',
     'import/no-extraneous-dependencies': 'off',
+    '@next/next/no-img-element': 'off',
   },
 };

@@ -1,5 +1,11 @@
-const slicer = <T>(arr: Array<T>, piece: number) => {
-  const sliceArray = new Array<{ key: number; arr: T[] }>(piece);
+export type GalleryArrType<T> = {
+  arr: Array<T>;
+  pieces: number;
+};
+
+export const slicer = <T>(arr, pieces) => {
+  const sliceArray = new Array<{ key: number; arr: T[] }>(pieces);
+
   for (let index = 0; index < sliceArray.length; index += 1) {
     sliceArray[index] = { key: index, arr: [] };
   }
@@ -15,5 +21,3 @@ const slicer = <T>(arr: Array<T>, piece: number) => {
 
   return sliceArray;
 };
-// eslint-disable-next-line import/prefer-default-export
-export { slicer };

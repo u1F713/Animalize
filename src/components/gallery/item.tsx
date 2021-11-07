@@ -15,6 +15,7 @@ const GalleryItem: FunctionComponent<GalleryItemProps> = ({
   const updateModal = () => {
     setModal({ alternativeText, pictureSrc, modalVisible: true });
   };
+
   return (
     <figure onClick={updateModal} className="gallery-item" role="none">
       <img src={pictureSrc} alt={alternativeText} />

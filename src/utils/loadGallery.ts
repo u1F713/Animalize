@@ -1,9 +1,11 @@
+import { getGallery, getImage } from './cloudinary.api';
 import { ImageItemDto } from '../common/gallery.dto';
-import apiSearch from './cloudinary.api';
 
-const loadGallery = async (maxResults: number): Promise<ImageItemDto[]> => {
+export const loadGallery = async (
+  maxResults: number,
+): Promise<ImageItemDto[]> => {
   const pictures = new Array<ImageItemDto>();
-  const data: string[] = await apiSearch({
+  const data: string[] = await getGallery({
     type: 'upload',
     prefix: 'gallery',
     max_results: maxResults,
@@ -21,4 +23,10 @@ const loadGallery = async (maxResults: number): Promise<ImageItemDto[]> => {
   return pictures;
 };
 
-export default loadGallery;
+export const loadImage = async (name: string): Promise<ImageItemDto> => {
+  const url = await getImage(name);
+  return {
+    pictureSrc: url,
+    alternativeText: url.split('/').pop(),
+  };
+};

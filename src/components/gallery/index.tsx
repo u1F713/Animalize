@@ -4,11 +4,7 @@ import { State } from '../../states';
 import GalleryItem from './item';
 import ReloadGallery from './gallery.service';
 
-export interface GalleryProps {
-  columns: number;
-}
-
-const Gallery: FunctionComponent<GalleryProps> = (): JSX.Element => {
+const Gallery: FunctionComponent = (): JSX.Element => {
   const galleryList = useSelector((state: State) => state.gallery);
   const arrGalleryList = ReloadGallery(galleryList);
 

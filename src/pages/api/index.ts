@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
-import apiSearch from '../../utils/cloudinary.api';
+import { getGallery } from '../../utils/cloudinary.api';
 
 const handler = async (req: Request, res: Response): Promise<Response> => {
-  const data = await apiSearch({
+  const data = await getGallery({
     type: 'upload',
     prefix: 'gallery',
     max_results: 50,

@@ -1,5 +1,5 @@
 export interface ImageItemDto {
-  id: number;
+  id?: number;
   pictureSrc: string;
   alternativeText: string;
 }

@@ -1,12 +1,13 @@
+import { FunctionComponent } from 'react';
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ActionCreators } from '../states';
 import Gallery from '../components/gallery';
 import Layout from '../components/layout';
-import loadGallery from '../utils/loadGallery';
+import { loadGallery } from '../utils/loadGallery';
 
 export const getStaticProps = async () => {
-  const galleryData = await loadGallery(25);
+  const galleryData = await loadGallery(50);
 
   return {
     props: {
@@ -14,10 +15,11 @@ export const getStaticProps = async () => {
         data: galleryData,
       },
     },
+    revalidate: 10,
   };
 };
 
-export default function Home({ gallery }) {
+const Home: FunctionComponent<{ gallery }> = ({ gallery }) => {
   const dispath = useDispatch();
   const { setGalleryItems } = bindActionCreators(ActionCreators, dispath);
 
@@ -25,7 +27,8 @@ export default function Home({ gallery }) {
 
   return (
     <Layout>
-      <Gallery columns={3} />
+      <Gallery />
     </Layout>
   );
-}
+};
+export default Home;

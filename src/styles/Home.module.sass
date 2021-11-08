@@ -2,17 +2,11 @@ body
   background-color: $main-bg
 
 .fullscreen-container
-  position: fixed
-  left: 0
-  top: 0
-  width: 100%
-  height: 100%
   display: flex
   direction: column
   align-items: center
   justify-content: center
-  z-index: 99
-  background-color: rgba(0, 0, 0, 0.5)
+  min-height: 100vh
 
 .container
   display: flex
@@ -24,7 +18,6 @@ body
 .display-title
   font-size: 3.4em
   text-align: center
-  color: $main-fg
   padding-top: 0.4em
 
 #Gallery
@@ -51,6 +44,20 @@ body
 
       &:hover
         transform: scale(1.2)
+
+#Footer
+  margin: 4em 0 1em 0
+
+  footer
+    text-align: center
+    p
+      margin: .5em
+
+  a
+    color: #BD4B4B
+
+    &:hover
+      text-decoration: underline
 
 @media (max-width: 604px)
   #Gallery

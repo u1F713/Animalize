@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Header from '../header';
 import Container from '../containers/container';
 import Modal from '../modal';
+import Footer from '../footer';
 
 const Layout: FunctionComponent = ({ children }): JSX.Element => {
   return (
@@ -16,6 +17,7 @@ const Layout: FunctionComponent = ({ children }): JSX.Element => {
       <div>
         <Container>{children}</Container>
       </div>
+      <Footer />
     </>
   );
 };

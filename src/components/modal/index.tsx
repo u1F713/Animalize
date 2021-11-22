@@ -14,6 +14,7 @@ const Modal: FunctionComponent = (): JSX.Element => {
       alternativeText: modal.alternativeText,
       modalVisible: false,
     });
+    // document.body.style.overflow = 'visible';
   };
 
   return (

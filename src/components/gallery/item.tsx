@@ -13,6 +13,7 @@ const GalleryItem: FunctionComponent<GalleryItemProps> = ({
   const dispath = useDispatch();
   const { setModal } = bindActionCreators(ActionCreators, dispath);
   const updateModal = () => {
+    // document.body.style.overflow = 'hidden';
     setModal({ alternativeText, pictureSrc, modalVisible: true });
   };
 

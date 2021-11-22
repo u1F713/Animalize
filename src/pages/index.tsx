@@ -24,7 +24,6 @@ const Home: FunctionComponent<{ gallery }> = ({ gallery }) => {
   const { setGalleryItems } = bindActionCreators(ActionCreators, dispath);
 
   setGalleryItems(gallery.data);
-
   return (
     <Layout>
       <Gallery />

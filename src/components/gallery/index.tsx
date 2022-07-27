@@ -1,12 +1,12 @@
-import { FunctionComponent } from 'react';
-import { useSelector } from 'react-redux';
-import { State } from '../../states';
-import GalleryItem from './item';
-import ReloadGallery from './gallery.service';
+import { FunctionComponent } from 'react'
+import { useSelector } from 'react-redux'
+import { State } from '../../common/states'
+import GalleryItem from './item'
+import ReloadGallery from './gallery.service'
 
 const Gallery: FunctionComponent = (): JSX.Element => {
-  const galleryList = useSelector((state: State) => state.gallery);
-  const arrGalleryList = ReloadGallery(galleryList);
+  const galleryList = useSelector((state: State) => state.gallery)
+  const arrGalleryList = ReloadGallery(galleryList)
 
   return (
     <main id="Gallery">
@@ -22,10 +22,10 @@ const Gallery: FunctionComponent = (): JSX.Element => {
               />
             ))}
           </section>
-        );
+        )
       })}
     </main>
-  );
-};
+  )
+}
 
-export default Gallery;
+export default Gallery

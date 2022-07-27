@@ -1,7 +1,7 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react'
 
 const FullScreenContainer: FunctionComponent = ({ children }) => {
-  return <div className="fullscreen-container">{children}</div>;
-};
+  return <div className="fullscreen-container">{children}</div>
+}
 
-export default FullScreenContainer;
+export default FullScreenContainer

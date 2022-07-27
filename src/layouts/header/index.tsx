@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import Container from '../containers/container'
+import Container from '../../components/containers/container'
 
 const Header: FunctionComponent = (): JSX.Element => {
   return (

@@ -1,7 +1,7 @@
 root: true
 env:
-  browser: true
-  ESNext: true
+  es2022: true
+  node: true
 extends:
   [
     eslint:recommended,

@@ -20,7 +20,7 @@ const Modal: FunctionComponent = (): JSX.Element => {
   return (
     <div
       onClick={closeModal}
-      className={`modal   ${modal.modalVisible != null ? 'show-modal' : 'hidden-modal'}`}
+      className={`modal   ${modal.modalVisible === true ? 'show-modal' : 'hidden-modal'}`}
       role="none"
     >
       <div className="modal-body">

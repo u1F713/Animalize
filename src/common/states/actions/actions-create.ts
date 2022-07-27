@@ -13,7 +13,7 @@ export const setGalleryItems = (input: ImageItemDto[]) => {
   }
 }
 
-export const GetGalleryOneItem = (input: null) => {
+export const GetGalleryOneItem = (input: []) => {
   return (dispath: Dispatch<GalleryActions>) => {
     dispath({
       type: ActionType.SET,

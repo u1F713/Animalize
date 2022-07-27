@@ -1,0 +1,19 @@
+root: true
+env:
+  es2022: true
+  node: true
+extends:
+  [
+    eslint:recommended,
+    standard-with-typescript,
+    plugin:prettier/recommended,
+    plugin:react/recommended,
+    plugin:react/jsx-runtime,
+  ]
+parser: "@typescript-eslint/parser"
+parserOptions:
+  project: ["tsconfig.json", "src", "test"]
+settings:
+  react:
+    version: detect
+ignorePatterns: ["dist", "build", "node_modules"]

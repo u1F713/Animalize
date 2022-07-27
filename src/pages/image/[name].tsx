@@ -1,47 +1,47 @@
-import { FunctionComponent, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { ImageItemDto } from '../../common/gallery.dto';
-import { ActionCreators } from '../../states';
-import { loadGallery, loadImage } from '../../utils/loadGallery';
-import Gallery from '../../components/gallery';
-import Layout from '../../components/layout';
-import Modal from '../../components/modal';
+import { FunctionComponent, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { ImageItemDto } from '../../common/types/gallery.dto'
+import { ActionCreators } from '../../common/states'
+import { loadGallery, loadImage } from '../../common/utils/loadGallery'
+import Gallery from '../../components/gallery'
+import Layout from '../../components/layout'
+import Modal from '../../components/modal'
 
-export const getStaticPaths = async () => {
-  const imgs = await loadGallery(50);
+export const getStaticPaths = async (): Promise<any> => {
+  const imgs = await loadGallery(50)
   const paths = imgs.map((image): unknown => ({
-    params: { name: image.alternativeText },
-  }));
-  return { paths, fallback: false };
-};
+    params: { name: image.alternativeText }
+  }))
+  return { paths, fallback: false }
+}
 
-export const getStaticProps = async (context: any) => {
-  const img = await loadImage(context.params.name);
+export const getStaticProps = async (context: any): Promise<any> => {
+  const img = await loadImage(context.params.name)
   return {
     props: {
-      img,
-    },
-  };
-};
+      img
+    }
+  }
+}
 
 const Image: FunctionComponent<{ img: ImageItemDto }> = ({ img }) => {
-  const dispath = useDispatch();
+  const dispath = useDispatch()
 
-  const { setModal } = bindActionCreators(ActionCreators, dispath);
+  const { setModal } = bindActionCreators(ActionCreators, dispath)
   useEffect(() => {
     setModal({
       modalVisible: true,
       pictureSrc: img.pictureSrc,
-      alternativeText: img.alternativeText,
-    });
-  }, []);
+      alternativeText: img.alternativeText
+    })
+  }, [])
 
   return (
     <Layout>
       <Gallery />
       <Modal />
     </Layout>
-  );
-};
-export default Image;
+  )
+}
+export default Image

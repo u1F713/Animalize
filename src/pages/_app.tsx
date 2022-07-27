@@ -1,15 +1,14 @@
-import '../styles/globals.sass';
-import { Provider } from 'react-redux';
-import { store } from '../states';
+import { AppProps } from 'next/app'
+import App from '@app'
+import '../features/styles-sass/global.sass'
+import { ReactElement } from 'react'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps): ReactElement {
   return (
-    <>
-      <Provider store={store}>
-        <Component {...pageProps} />
-      </Provider>
-    </>
-  );
+    <App>
+      <Component {...pageProps} />
+    </App>
+  )
 }
 
-export default MyApp;
+export default MyApp

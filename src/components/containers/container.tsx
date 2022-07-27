@@ -1,11 +1,15 @@
-import { FunctionComponent } from 'react';
+import { FC, ReactNode } from 'react'
 
-const Container: FunctionComponent = ({ children }): JSX.Element => {
+interface ContainerProps {
+  children: ReactNode
+}
+
+const Container: FC<ContainerProps> = ({ children }): JSX.Element => {
   return (
     <div className="container">
       <div>{children}</div>
     </div>
-  );
-};
+  )
+}
 
-export default Container;
+export default Container

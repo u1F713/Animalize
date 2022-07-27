@@ -1,35 +1,35 @@
-import { useEffect, useState } from 'react';
-import { slicer } from '../../utils/arraySlice';
-import { ImageItemDto } from '../../common/gallery.dto';
-import { GalleryItemProps } from './item';
+import { useEffect, useState } from 'react'
+import { slicer } from '../../common/utils/arraySlice'
+import { ImageItemDto } from '../../common/types/gallery.dto'
+import { GalleryItemProps } from './item'
 
-const ReloadGallery = (gallery: ImageItemDto[]) => {
-  const [columns, setColumns] = useState(1);
+const ReloadGallery = (gallery: ImageItemDto[]): any => {
+  const [columns, setColumns] = useState(1)
   useEffect(() => {
-    const handleResize = () => {
+    const handleResize = (): any => {
       switch (true) {
         case window.innerWidth > 1200:
-          setColumns(4);
-          break;
+          setColumns(4)
+          break
 
         case window.innerWidth > 903:
-          setColumns(3);
-          break;
+          setColumns(3)
+          break
 
         case window.innerWidth > 604:
-          setColumns(2);
-          break;
+          setColumns(2)
+          break
 
         default:
-          setColumns(1);
-          break;
+          setColumns(1)
+          break
       }
-    };
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    }
+    window.addEventListener('resize', handleResize)
+    handleResize()
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
-  return slicer<GalleryItemProps>(gallery, columns);
-};
-export default ReloadGallery;
+  return slicer<GalleryItemProps>(gallery, columns)
+}
+export default ReloadGallery

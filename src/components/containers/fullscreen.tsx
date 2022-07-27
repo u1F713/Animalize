@@ -1,7 +1,11 @@
-import { FunctionComponent } from 'react';
+import { FC, ReactNode } from 'react'
 
-const FullScreenContainer: FunctionComponent = ({ children }) => {
-  return <div className="fullscreen-container">{children}</div>;
-};
+interface FullScreenContainerProps {
+  children: ReactNode
+}
 
-export default FullScreenContainer;
+const FullScreenContainer: FC<FullScreenContainerProps> = ({ children }) => {
+  return <div className="fullscreen-container">{children}</div>
+}
+
+export default FullScreenContainer

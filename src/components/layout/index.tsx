@@ -1,11 +1,15 @@
-import { FunctionComponent } from 'react';
-import Head from 'next/head';
-import Header from '../header';
-import Container from '../containers/container';
-import Modal from '../modal';
-import Footer from '../footer';
+import { FC, ReactNode } from 'react'
+import Head from 'next/head'
+import Header from '../header'
+import Container from '../containers/container'
+import Modal from '../modal'
+import Footer from '../footer'
 
-const Layout: FunctionComponent = ({ children }): JSX.Element => {
+interface LayoutProps {
+  children: ReactNode
+}
+
+const Layout: FC<LayoutProps> = ({ children }): JSX.Element => {
   return (
     <>
       <Head>
@@ -19,7 +23,7 @@ const Layout: FunctionComponent = ({ children }): JSX.Element => {
       </div>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

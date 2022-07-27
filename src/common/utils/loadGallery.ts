@@ -13,7 +13,7 @@ export const loadGallery = async (maxResults: number): Promise<ImageItemDto[]> =
     const pictureRestuct: ImageItemDto = {
       id: index,
       pictureSrc: url,
-      alternativeText: url.split('/').pop()
+      alternativeText: url.split('/').pop() ?? ''
     }
     pictures.push(pictureRestuct)
   })
@@ -25,6 +25,6 @@ export const loadImage = async (name: string): Promise<ImageItemDto> => {
   const url = await getImage(name)
   return {
     pictureSrc: url,
-    alternativeText: url.split('/').pop()
+    alternativeText: url.split('/').pop() ?? ''
   }
 }

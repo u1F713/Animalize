@@ -13,7 +13,7 @@ export const getGallery = async (data: {
   max_results: number
 }): Promise<string[]> => {
   let result = await cloudinary.v2.api.resources(data)
-  result = result.resources.map((item) => item.secure_url)
+  result = result.resources.map((item: any) => item.secure_url)
   return result
 }
 

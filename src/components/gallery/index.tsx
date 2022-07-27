@@ -10,10 +10,10 @@ const Gallery: FunctionComponent = (): JSX.Element => {
 
   return (
     <main id="Gallery">
-      {arrGalleryList.map((elm) => {
+      {arrGalleryList.map((elm: any) => {
         return (
           <section className="gallery-d" key={elm.key}>
-            {elm.arr.map((item) => (
+            {elm.arr.map((item: any) => (
               <GalleryItem
                 id={item.id}
                 pictureSrc={item.pictureSrc}

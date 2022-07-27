@@ -1,6 +1,10 @@
-import { FunctionComponent } from 'react'
+import { FC, ReactNode } from 'react'
 
-const FullScreenContainer: FunctionComponent = ({ children }) => {
+interface FullScreenContainerProps {
+  children: ReactNode
+}
+
+const FullScreenContainer: FC<FullScreenContainerProps> = ({ children }) => {
   return <div className="fullscreen-container">{children}</div>
 }
 

@@ -1,8 +1,8 @@
 import { FC, ReactNode } from 'react'
 import Head from 'next/head'
-import Modal from 'src/components/modal'
+import Modal from '$components/modal'
+import Container from '$components/containers/container'
 import Header from 'src/layouts/header'
-import Container from 'src/components/containers/container'
 import Footer from './footer'
 
 interface LayoutProps {

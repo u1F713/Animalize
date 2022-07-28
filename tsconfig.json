@@ -20,7 +20,8 @@
       "@app": ["src/components/App/"],
       "$mod/*": ["src/features/*"],
       "$components/*": ["src/components/*"],
-      "$layouts/*": ["src/layouts/*"]
+      "$layouts/*": ["src/layouts/*"],
+      "$common/*": ["src/common/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

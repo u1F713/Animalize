@@ -1,12 +1,35 @@
-import { FunctionComponent } from 'react'
+import { GetStaticProps, NextPage } from 'next'
 import { useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { ActionCreators } from '../common/states'
 import { fetchGallery } from '$mod/cloudinary/services/fetchData'
+import PropTypes from 'prop-types'
 import Gallery from '$layouts/gallery'
 import Layout from '$layouts/default'
 
-export const getStaticProps = async (): Promise<any> => {
+interface HomeProps {
+  gallery: any
+}
+
+const Home: NextPage<HomeProps> = ({ gallery }) => {
+  const dispath = useDispatch()
+  const { setGalleryItems } = bindActionCreators(ActionCreators, dispath)
+
+  setGalleryItems(gallery.data)
+  console.log(gallery)
+
+  return (
+    <Layout>
+      <Gallery />
+    </Layout>
+  )
+}
+
+Home.propTypes = {
+  gallery: PropTypes.any
+}
+
+export const getStaticProps: GetStaticProps = async () => {
   const galleryData = await fetchGallery({ type: 'upload', prefix: 'gallery', max_results: 50 })
 
   return {
@@ -23,17 +46,4 @@ export const getStaticProps = async (): Promise<any> => {
   }
 }
 
-const Home: FunctionComponent<{ gallery: any }> = ({ gallery }) => {
-  const dispath = useDispatch()
-  const { setGalleryItems } = bindActionCreators(ActionCreators, dispath)
-
-  setGalleryItems(gallery.data)
-  console.log(gallery)
-
-  return (
-    <Layout>
-      <Gallery />
-    </Layout>
-  )
-}
 export default Home

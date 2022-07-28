@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/express': ^4.17.13
+  '@types/prop-types': ^15.7.5
   '@types/react': ^18.0.15
   '@typescript-eslint/eslint-plugin': ^5.31.0
   '@typescript-eslint/parser': ^5.31.0
@@ -28,6 +29,7 @@ specifiers:
   typescript: ^4.7.4
 
 dependencies:
+  '@types/prop-types': 15.7.5
   cloudinary: 1.30.1
   next: 12.2.3_pmtxwaud2i7t46nnb7sfofmose
   prop-types: 15.8.1

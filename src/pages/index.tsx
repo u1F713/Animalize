@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { ActionCreators } from '../common/states'
 import { fetchGallery } from '$mod/cloudinary/services/fetchData'
-import Gallery from '../layouts/gallery'
-import Layout from '../layouts/default'
+import Gallery from '$layouts/gallery'
+import Layout from '$layouts/default'
 
 export const getStaticProps = async (): Promise<any> => {
   const galleryData = await fetchGallery({ type: 'upload', prefix: 'gallery', max_results: 50 })

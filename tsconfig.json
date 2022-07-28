@@ -19,7 +19,8 @@
     "paths": {
       "@app": ["src/components/App/"],
       "$mod/*": ["src/features/*"],
-      "$components/*": ["src/components/*"]
+      "$components/*": ["src/components/*"],
+      "$layouts/*": ["src/layouts/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

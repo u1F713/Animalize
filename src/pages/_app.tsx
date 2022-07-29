@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
-import App from '@app'
-import '../features/styles-sass/global.sass'
 import { ReactElement } from 'react'
+import App from '@app'
+import '$mod/styles-sass/global.sass'
 
 function MyApp({ Component, pageProps }: AppProps): ReactElement {
   return (

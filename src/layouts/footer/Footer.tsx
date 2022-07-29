@@ -1,8 +1,9 @@
-import { ReactElement } from 'react'
+import { FC } from 'react'
+import S from './Footer.module.sass'
 
-const Footer = (): ReactElement => {
+export const Footer: FC = () => {
   return (
-    <div id="Footer">
+    <div id="Footer" className={S.Footer}>
       <footer>
         <p>
           🄯 2020-2021 <a href="https://mashu-page.herokuapp.com/">Joseph Estevez</a>
@@ -12,4 +13,3 @@ const Footer = (): ReactElement => {
     </div>
   )
 }
-export default Footer

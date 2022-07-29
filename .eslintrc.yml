@@ -16,4 +16,4 @@ parserOptions:
 settings:
   react:
     version: detect
-ignorePatterns: ["dist", "build", "node_modules"]
+ignorePatterns: [dist, build, node_modules, next-env.d.ts]

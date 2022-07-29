@@ -17,7 +17,11 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
 
     "paths": {
-      "@app": ["src/components/App/"]
+      "@app": ["src/components/App/"],
+      "$mod/*": ["src/features/*"],
+      "$components/*": ["src/components/*"],
+      "$layouts/*": ["src/layouts/*"],
+      "$common/*": ["src/common/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

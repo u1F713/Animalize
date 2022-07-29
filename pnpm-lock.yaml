@@ -2,7 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/express': ^4.17.13
-  '@types/prop-types': ^15.7.5
   '@types/react': ^18.0.15
   '@typescript-eslint/eslint-plugin': ^5.31.0
   '@typescript-eslint/parser': ^5.31.0
@@ -19,7 +18,6 @@ specifiers:
   eslint-plugin-react: ^7.30.1
   next: 12.2.3
   prettier: ^2.7.1
-  prop-types: ^15.8.1
   react: 18.2.0
   react-dom: 18.2.0
   react-redux: ^8.0.2
@@ -29,10 +27,8 @@ specifiers:
   typescript: ^4.7.4
 
 dependencies:
-  '@types/prop-types': 15.7.5
   cloudinary: 1.30.1
   next: 12.2.3_pmtxwaud2i7t46nnb7sfofmose
-  prop-types: 15.8.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-redux: 8.0.2_ykexw26oh3eb343dx4xni47374
@@ -1823,6 +1819,7 @@ packages:
   /object-assign/4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
     engines: {node: '>=0.10.0'}
+    dev: true
 
   /object-inspect/1.12.2:
     resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==}
@@ -2033,6 +2030,7 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
+    dev: true
 
   /proxy-agent/5.0.0:
     resolution: {integrity: sha512-gkH7BkvLVkSfX9Dk27W6TyNOWWZWRilRfk1XxGNWOYJ2TuedAv1yFpCaU9QSBmBe716XOTNpYNOzhysyw8xn7g==}

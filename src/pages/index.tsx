@@ -1,11 +1,11 @@
 import { GetStaticProps, NextPage } from 'next'
 import { fetchGallery } from '$mod/cloudinary/services/fetchData'
-import PropTypes from 'prop-types'
+import { GalleryAdapter } from '$mod/gallery/models/galleryEntity'
 import Gallery from '$layouts/gallery'
 import Layout from '$layouts/default'
 
 interface HomeProps {
-  gallery: any
+  gallery: GalleryAdapter
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -21,16 +21,14 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const Home: NextPage<HomeProps> = ({ gallery }) => {
+const Home: NextPage<HomeProps> = ({ gallery }: HomeProps) => {
+  console.log(gallery)
+
   return (
     <Layout>
       <Gallery />
     </Layout>
   )
-}
-
-Home.propTypes = {
-  gallery: PropTypes.any
 }
 
 export default Home

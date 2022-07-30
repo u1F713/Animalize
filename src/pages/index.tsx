@@ -22,8 +22,6 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Home: NextPage<HomeProps> = ({ gallery }: HomeProps) => {
-  console.log(gallery)
-
   return (
     <Layout>
       <Gallery />

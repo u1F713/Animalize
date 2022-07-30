@@ -6,7 +6,7 @@ export interface GalleryItem {
 
 export interface GalleryAdapter {
   ids: string[]
-  entities: GalleryItem[]
+  entities: { [key: string]: GalleryItem }
 }
 
-export const initialState: GalleryAdapter = { ids: [], entities: [] }
+export const initialState: GalleryAdapter = { ids: [], entities: {} }

@@ -3,4 +3,5 @@ export interface ResourceApiRes {
   resource_type: string
   created_at: string
   secure_url: string
+  folder: string
 }

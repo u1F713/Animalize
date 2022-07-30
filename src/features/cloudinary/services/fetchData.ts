@@ -15,7 +15,7 @@ export const fetchGallery = async (options: AdminAndResourceOptions): Promise<Ga
     entities[element.public_id] = {
       id: element.public_id,
       pictureSrc: element.secure_url,
-      alternativeLabel: element.resource_type
+      alternativeLabel: element.public_id.replace(`${element.folder ?? ''}/`, '')
     }
   })
 

@@ -4,7 +4,7 @@ import { GalleryAdapter } from '$mod/gallery/models/galleryEntity'
 import Gallery from '$layouts/gallery'
 
 interface HomeProps {
-  gallery: GalleryAdapter
+  resources: GalleryAdapter
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -12,16 +12,14 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      gallery: {
-        resources
-      }
+      resources
     },
     revalidate: 10
   }
 }
 
-const Home: NextPage<HomeProps> = ({ gallery }: HomeProps) => {
-  return <Gallery resources={gallery} />
+const Home: NextPage<HomeProps> = ({ resources }: HomeProps) => {
+  return <Gallery resources={resources} />
 }
 
 export default Home

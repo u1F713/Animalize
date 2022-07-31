@@ -1,2 +1,5 @@
+export type { GalleryActionsTypes } from './models/ActionsTypes'
+export type { GalleryAdapter } from './models/galleryEntity'
+export type { Actions } from './state/reducer'
+export { addTodo } from './state/actions/received'
 export { galleryReducer } from './state/reducer'
-export type { GalleryActions } from './state/actions/'

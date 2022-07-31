@@ -1,10 +1,12 @@
-import { ActionType } from './actions/actionsTypes'
+import { GalleryActionsTypes } from '../models/ActionsTypes'
 import { GalleryAdapter, initialState } from '../models/galleryEntity'
-import { GalleryActions } from './actions/index'
+import { GalleryResived } from './actions/received'
 
-export const galleryReducer = (state = initialState, action: GalleryActions): GalleryAdapter => {
+export type Actions = GalleryResived
+
+export const galleryReducer = (state = initialState, action: Actions): GalleryAdapter => {
   switch (action.type) {
-    case ActionType.resived:
+    case GalleryActionsTypes.resived:
       return action.payload
 
     default:

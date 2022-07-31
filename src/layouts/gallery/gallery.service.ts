@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { slicer } from '../../common/utils/arraySlice'
-import { ImageItemDto } from '../../common/types/gallery.dto'
-import { GalleryItemProps } from './item'
+import { GalleryItemProps } from './components/item'
+import { GalleryAdapter } from '$mod/gallery/models/galleryEntity'
 
-const ReloadGallery = (gallery: ImageItemDto[]): any => {
+const ReloadGallery = (gallery: GalleryAdapter): any => {
   const [columns, setColumns] = useState(1)
   useEffect(() => {
     const handleResize = (): any => {

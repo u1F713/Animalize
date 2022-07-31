@@ -2,7 +2,6 @@ import { GetStaticProps, NextPage } from 'next'
 import { fetchGallery } from '$mod/cloudinary/services/fetchData'
 import { GalleryAdapter } from '$mod/gallery/models/galleryEntity'
 import Gallery from '$layouts/gallery'
-import Layout from '$layouts/default'
 
 interface HomeProps {
   gallery: GalleryAdapter
@@ -22,11 +21,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Home: NextPage<HomeProps> = ({ gallery }: HomeProps) => {
-  return (
-    <Layout>
-      <Gallery />
-    </Layout>
-  )
+  return <Gallery resources={gallery} />
 }
 
 export default Home

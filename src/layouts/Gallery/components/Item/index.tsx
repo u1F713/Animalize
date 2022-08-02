@@ -1,13 +1,16 @@
-import { FunctionComponent } from 'react'
-import { ImageItemDto } from '../../../common/types/gallery.dto'
-export type GalleryItemProps = ImageItemDto
+import { FC } from 'react'
+import { GalleryItem } from '$mod/gallery/models/galleryEntity'
 
-const GalleryItem: FunctionComponent<GalleryItemProps> = ({ pictureSrc, alternativeText }) => {
+interface ItemProps {
+  picture: GalleryItem
+}
+
+const Item: FC<ItemProps> = ({ picture }) => {
   return (
     <figure className="gallery-item" role="none">
-      <img src={pictureSrc} alt={alternativeText} />
+      <img src={picture.pictureSrc} alt={picture.alternativeLabel} />
     </figure>
   )
 }
 
-export default GalleryItem
+export default Item

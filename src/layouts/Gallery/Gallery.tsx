@@ -1,26 +1,19 @@
+import { useAppSelector } from '$common/store'
 import { FunctionComponent } from 'react'
-// import GalleryItem from './components/item'
-// import ReloadGallery from './gallery.service'
+import Item from './components/Item'
 
 const Gallery: FunctionComponent = () => {
-  // const arrGalleryList = ReloadGallery(galleryList)
+  const { entities } = useAppSelector((state) => state.gallery)
 
   return (
     <main id="Gallery">
-      {/* {arrGalleryList.map((elm: any) => {
-        return (
-          <section className="gallery-d" key={elm.key}>
-            {elm.arr.map((item: any) => (
-              <GalleryItem
-                id={item.id}
-                pictureSrc={item.pictureSrc}
-                alternativeText={item.alternativeText}
-                key={item.id}
-              />
-            ))}
+      <section className="gallery-d">
+        {Object.values(entities).map((entity) => (
+          <section key={entity.id}>
+            <Item picture={entity} />
           </section>
-        )
-      })} */}
+        ))}
+      </section>
     </main>
   )
 }

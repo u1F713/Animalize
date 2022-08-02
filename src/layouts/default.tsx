@@ -2,8 +2,8 @@ import { FC, ReactNode } from 'react'
 import Head from 'next/head'
 import Modal from '$components/modal'
 import Container from '$components/containers/container'
-import Header from 'src/layouts/header'
-import Footer from './footer'
+import Header from '$layouts/Header'
+import Footer from './Footer'
 
 interface LayoutProps {
   children: ReactNode

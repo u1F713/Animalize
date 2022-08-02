@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from 'next'
 import { fetchGallery } from '$mod/cloudinary/services/fetchData'
 import { GalleryAdapter } from '$mod/gallery/models/galleryEntity'
-import Gallery from '$layouts/gallery'
+import Gallery from '$layouts/Gallery'
 
 interface HomeProps {
   resources: GalleryAdapter

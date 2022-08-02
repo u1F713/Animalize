@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import { ImageItemDto } from '../../common/types/gallery.dto'
 import { ActionCreators } from '../../common/states'
 import { loadGallery, loadImage } from '../../common/utils/loadGallery'
-import Gallery from '../../layouts/gallery'
+import Gallery from '../../layouts/Gallery'
 import Layout from '../../components/layout'
 import Modal from '../../components/modal'
 

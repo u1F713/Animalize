@@ -1,12 +1,15 @@
 import { useAppSelector } from '$common/store'
-import { FunctionComponent } from 'react'
+import { FC, useRef } from 'react'
+import { useGetColumns } from '$mod/gallery'
 import Item from './components/Item'
 
-const Gallery: FunctionComponent = () => {
+const Gallery: FC = () => {
   const { entities } = useAppSelector((state) => state.gallery)
+  const element = useRef<HTMLElement>(null)
+  const columns = useGetColumns(element.current)
 
   return (
-    <main id="Gallery">
+    <main id="Gallery" ref={element}>
       <section className="gallery-d">
         {Object.values(entities).map((entity) => (
           <section key={entity.id}>
@@ -14,6 +17,7 @@ const Gallery: FunctionComponent = () => {
           </section>
         ))}
       </section>
+      <span>{columns}</span>
     </main>
   )
 }

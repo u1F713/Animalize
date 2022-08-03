@@ -1,3 +1,4 @@
+/*
 import { FunctionComponent } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -31,3 +32,5 @@ const Modal: FunctionComponent = (): JSX.Element => {
 }
 
 export default Modal
+*/
+export default <></>

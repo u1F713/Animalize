@@ -1,31 +1,45 @@
 import { useCallback, useEffect, useState } from 'react'
+import { GalleryItem } from '../models/galleryEntity'
+import { genGallerList } from '../utils/getItemList'
 
-export function useGetColumns(element: HTMLElement | null): number {
-  const [columns, setColumns] = useState(1)
+interface GetColumnsProps {
+  element: HTMLElement | null
+  entities: GalleryItem[]
+}
+
+export function useGetColumns({ element, entities }: GetColumnsProps): any[] {
+  const [columnsNum, setColumnsNum] = useState(1)
+  const [columns, setColumns] = useState(genGallerList(entities, columnsNum))
 
   const handleRisize = useCallback(() => {
     if (element == null) return 0
     switch (true) {
       case element.clientWidth > 1200:
-        return setColumns(4)
+        return setColumnsNum(4)
 
-      case element.clientWidth > 900:
-        return setColumns(3)
+      case element.clientWidth > 903:
+        return setColumnsNum(3)
 
-      case element.clientWidth > 600:
-        return setColumns(2)
+      case element.clientWidth > 604:
+        return setColumnsNum(2)
 
       default:
-        return setColumns(1)
+        return setColumnsNum(1)
     }
   }, [element?.clientWidth, element])
 
   useEffect(() => {
     const elementObserver = new ResizeObserver(handleRisize)
+
+    // handleRisize()
     if (element != null) elementObserver.observe(element)
 
     return () => elementObserver.disconnect()
   }, [element])
+
+  useEffect(() => {
+    setColumns(genGallerList(entities, columnsNum))
+  }, [columnsNum])
 
   return columns
 }

@@ -1,4 +1,4 @@
-import { useAppSelector } from '$common/store'
+import { useAppSelector } from 'src/store'
 import { FC, useRef } from 'react'
 import { useGetColumns } from '$mod/gallery'
 import { GalleryItem } from '$mod/gallery/models/galleryEntity'

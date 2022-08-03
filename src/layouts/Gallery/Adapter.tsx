@@ -1,5 +1,5 @@
 import { memo, ReactElement, useEffect } from 'react'
-import { useAppDispatch } from '$common/store'
+import { useAppDispatch } from 'src/store'
 import { addTodo, GalleryAdapter } from '$mod/gallery'
 import { isEqual } from 'lodash'
 import Gallery from './Gallery'

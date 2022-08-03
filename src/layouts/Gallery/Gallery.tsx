@@ -17,7 +17,6 @@ const Gallery: FC = () => {
           </section>
         ))}
       </section>
-      <span>{columns}</span>
     </main>
   )
 }

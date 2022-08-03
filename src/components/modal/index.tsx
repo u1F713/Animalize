@@ -1,36 +1,27 @@
-/*
-import { FunctionComponent } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { ActionCreators, State } from '../../common/states'
+import { FC, useCallback } from 'react'
+import { useAppDispatch, useAppSelector } from 'src/store'
 
-const Modal: FunctionComponent = (): JSX.Element => {
-  const dispath = useDispatch()
-  const modal = useSelector((state: State) => state.modal)
-  const { setModal } = bindActionCreators(ActionCreators, dispath)
+const Modal: FC = (): JSX.Element => {
+  const dispath = useAppDispatch()
+  const modal = useAppSelector((state) => state.modal)
 
-  const closeModal = (): void => {
-    setModal({
-      pictureSrc: modal.pictureSrc,
-      alternativeText: modal.alternativeText,
-      modalVisible: false
+  const closeModal = useCallback(() => {
+    dispath({
+      type: 'modal/close'
     })
-    // document.body.style.overflow = 'visible';
-  }
+  }, [dispath])
 
   return (
     <div
       onClick={closeModal}
-      className={`modal   ${modal.modalVisible === true ? 'show-modal' : 'hidden-modal'}`}
+      className={`modal ${modal.visible === true ? 'show-modal' : 'hidden-modal'}`}
       role="none"
     >
-      <div className="modal-body">
-        <img src={modal.pictureSrc} alt={modal.alternativeText} />
-      </div>
+      <figure className="modal-body">
+        <img src={modal.picture} alt={modal.alternativeText} />
+      </figure>
     </div>
   )
 }
 
 export default Modal
-*/
-export default <></>

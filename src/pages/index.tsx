@@ -8,7 +8,7 @@ interface HomeProps {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const resources = await fetchGallery({ type: 'upload', prefix: 'gallery', max_results: 5 })
+  const resources = await fetchGallery({ type: 'upload', prefix: 'gallery', max_results: 50 })
 
   return {
     props: {

@@ -2,6 +2,8 @@ export interface GalleryItem {
   id: string
   pictureSrc: string
   alternativeLabel: string
+  height: number
+  width: number
 }
 
 export interface GalleryAdapter {

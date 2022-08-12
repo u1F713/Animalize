@@ -20,7 +20,7 @@ const Item: FC<ItemProps> = ({ picture }) => {
 
   return (
     <figure onClick={updateModal} className={S.item}>
-      <Picture zoomIn image={{ src: picture.pictureSrc, width: 330, height: 300 }} />
+      <Picture zoomIn image={{ src: picture.pictureSrc, width: picture.width, height: picture.height }} />
     </figure>
   )
 }

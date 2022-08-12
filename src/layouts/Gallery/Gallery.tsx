@@ -1,8 +1,9 @@
-import { useAppSelector } from 'src/store'
 import { FC, useRef } from 'react'
+import { useAppSelector } from 'src/store'
 import { useGetColumns } from '$mod/gallery'
 import { GalleryItem } from '$mod/gallery/models/galleryEntity'
 import Item from './components/Item'
+import S from './Gallery.module.sass'
 
 const Gallery: FC = () => {
   const { entities } = useAppSelector((state) => state.gallery)
@@ -10,10 +11,10 @@ const Gallery: FC = () => {
   const columns = useGetColumns({ element: element.current, entities: Object.values(entities) })
 
   return (
-    <main id="Gallery" ref={element}>
+    <main className={S.Gallery} ref={element}>
       {columns.map((elm, key) => {
         return (
-          <section className="gallery-d" key={key}>
+          <section className={S.column} key={key}>
             {elm.arr.map((item: GalleryItem, key: number) => (
               <Item key={key} picture={item} />
             ))}

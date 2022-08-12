@@ -1,0 +1,17 @@
+.container
+  display: flex
+  max-width: 330px
+  overflow: hidden
+  border-radius: 5px
+  height: fit-content
+
+  .image
+    object-fit: cover
+    width: 100%
+
+.zoomIn
+  transition: transform 300ms ease
+  cursor: pointer
+
+  &:hover
+    transform: scale(1.2)

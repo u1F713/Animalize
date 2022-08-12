@@ -1,7 +1,7 @@
 import { GalleryAdapter, GalleryItem } from '$mod/gallery/models/galleryEntity'
 import { AdminAndResourceOptions } from 'cloudinary'
 import { ResourceApiRes } from '../model/resourcesApiRes'
-import { api } from './jdk.config'
+import { api } from './sdk.config'
 
 interface ApiResponse {
   resources: ResourceApiRes[]

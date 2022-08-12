@@ -11,6 +11,13 @@ interface LayoutProps {
 const Layout: FC<LayoutProps> = ({ children }): JSX.Element => {
   return (
     <>
+      <style jsx>{`
+        .container {
+          width: 100%;
+          margin: auto;
+          padding: 2em 0;
+        }
+      `}</style>
       <Head>
         <title>Awesome Gallery</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />

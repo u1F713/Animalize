@@ -1,5 +1,6 @@
 import { FC, useCallback } from 'react'
 import { useAppDispatch, useAppSelector } from 'src/store'
+import S from './Modal.module.sass'
 
 const Modal: FC = (): JSX.Element => {
   const dispath = useAppDispatch()
@@ -14,11 +15,11 @@ const Modal: FC = (): JSX.Element => {
   return (
     <div
       onClick={closeModal}
-      className={`modal ${modal.visible === true ? 'show-modal' : 'hidden-modal'}`}
+      className={`${S.modal} ${modal.visible === true ? S.show_modal : S.hidden_modal}`}
       role="none"
     >
-      <figure className="modal-body">
-        <img src={modal.picture} alt={modal.alternativeText} />
+      <figure className={S.modal_body}>
+        <img className={S.picture} src={modal.picture} alt={modal.alternativeText} />
       </figure>
     </div>
   )

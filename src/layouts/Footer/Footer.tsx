@@ -3,7 +3,7 @@ import S from './Footer.module.sass'
 
 export const Footer: FC = () => {
   return (
-    <div id="Footer" className={S.Footer}>
+    <div className={S.Footer}>
       <footer>
         <p>
           🄯 2020-2021 <a href="https://mashu-page.herokuapp.com/">Joseph Estevez</a>

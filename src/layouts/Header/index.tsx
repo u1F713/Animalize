@@ -1,9 +1,10 @@
 import { FunctionComponent } from 'react'
+import S from './Header.module.sass'
 
 const Header: FunctionComponent = (): JSX.Element => {
   return (
-    <div className="container">
-      <header className="display-title">Awesome Gallery</header>
+    <div className={S.container}>
+      <header className={S.title}>Awesome Gallery</header>
     </div>
   )
 }

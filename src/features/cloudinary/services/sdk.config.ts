@@ -7,4 +7,4 @@ v2.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 })
 
-export const { api } = v2
+export const { api, image, url } = v2

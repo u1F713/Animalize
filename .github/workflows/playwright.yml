@@ -13,17 +13,22 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "14.x"
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 7
+          run_install: false
+
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: pnpm playwright install --with-deps
       - name: setup CI environment variables
         run: |
           echo CLOUDINARY_NAME=${{ secrets.CLOUDINARY_NAME }}
           echo CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}
           echo CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}
       - name: Run Playwright tests
-        run: npx playwright test
+        run: pnpm playwright test
       - uses: actions/upload-artifact@v2
         if: always()
         with:

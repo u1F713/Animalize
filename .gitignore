@@ -32,3 +32,8 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# testing
+/test-results/
+/playwright-report/
+/playwright/.cache/

@@ -43,8 +43,8 @@ const playwrightConfiguration: PlaywrightTestConfig = {
   ],
 
   webServer: {
-    command: 'pnpm start',
-    port: 3000
+    command: 'pnpm next dev --port 1616',
+    port: 1616
   }
 }
 

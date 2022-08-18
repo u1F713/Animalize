@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test:unit": "playwright test",
-    "test:e2e": "playwright test test/*",
-    "heroku-postbuild": "npm run build"
+    "test:e2e": "playwright test test/*"
   },
   "dependencies": {
     "cloudinary": "^1.30.1",

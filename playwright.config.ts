@@ -22,7 +22,7 @@ const playwrightConfiguration: PlaywrightTestConfig = {
 
   use: {
     actionTimeout: 0,
-    baseURL: 'http://localhost:3000',
+    baseURL: 'http://localhost:1616',
     trace: 'on-first-retry'
   },
 

@@ -23,5 +23,6 @@ export default createGlobalStyle`
   html,body{
     font-family: Mononoki, -apple-syste, Ubuntu, Fira Sans;
     line-height: 0.9;
+    background-color: ${(props) => props.theme.colors.bg};
   }
 `

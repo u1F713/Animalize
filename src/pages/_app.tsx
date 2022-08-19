@@ -1,11 +1,11 @@
 import type { AppProps } from 'next/app'
-import { ReactElement } from 'react'
+import { FunctionComponent } from 'react'
 import { Provider } from 'react-redux'
-import { store } from 'src/store'
+import { store } from '~/modules/redux'
 
 import '~/styles/main.sass'
 
-function MyApp({ Component, pageProps }: AppProps): ReactElement {
+const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
   return (
     <Provider store={store}>
       <Component {...pageProps} />
@@ -13,4 +13,4 @@ function MyApp({ Component, pageProps }: AppProps): ReactElement {
   )
 }
 
-export default MyApp
+export default App

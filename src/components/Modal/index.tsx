@@ -1,10 +1,10 @@
 import { FC, useCallback } from 'react'
-import { useAppDispatch, useAppSelector } from 'src/store'
+import { useDispatch, useSelector } from '~/modules/redux'
 import S from './Modal.module.sass'
 
 const Modal: FC = (): JSX.Element => {
-  const dispath = useAppDispatch()
-  const modal = useAppSelector((state) => state.modal)
+  const dispath = useDispatch()
+  const modal = useSelector((state) => state.modal)
 
   const closeModal = useCallback(() => {
     dispath({

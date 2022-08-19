@@ -1,12 +1,12 @@
 import { FC, useRef } from 'react'
-import { useAppSelector } from 'src/store'
+import { useSelector } from '~/modules/redux'
 import { useGetColumns } from '$mod/gallery'
 import { GalleryItem } from '$mod/gallery/models/galleryEntity'
 import Item from './components/Item'
 import S from './Gallery.module.sass'
 
 const Gallery: FC = () => {
-  const { entities } = useAppSelector((state) => state.gallery)
+  const { entities } = useSelector((state) => state.gallery)
   const element = useRef<HTMLElement>(null)
   const columns = useGetColumns({ element: element.current, entities: Object.values(entities) })
 

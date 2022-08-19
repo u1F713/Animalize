@@ -1,6 +1,6 @@
 import { FC, useCallback } from 'react'
 import { GalleryItem } from '$mod/gallery/models/galleryEntity'
-import { useAppDispatch } from 'src/store'
+import { useDispatch } from '~/modules/redux'
 import Picture from '~/components/Picture'
 import S from './Item.module.sass'
 
@@ -9,7 +9,7 @@ interface ItemProps {
 }
 
 const Item: FC<ItemProps> = ({ picture }) => {
-  const dispatch = useAppDispatch()
+  const dispatch = useDispatch()
 
   const updateModal = useCallback(() => {
     dispatch({

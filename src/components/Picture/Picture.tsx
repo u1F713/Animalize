@@ -1,20 +1,16 @@
-import { FC, useMemo } from 'react'
+import { FunctionComponent } from 'react'
 import Image, { ImageProps } from 'next/image'
-import S from './Picture.module.sass'
+import * as S from './Picture.styled'
 
 interface PictureProps {
   image: ImageProps
   zoomIn?: boolean
 }
 
-export const Picture: FC<PictureProps> = ({ image, zoomIn }) => {
-  const Styles = useMemo(() => {
-    return `${S.image} ${zoomIn ?? false ? S.zoomIn : ''}`
-  }, [zoomIn])
-
+export const Picture: FunctionComponent<PictureProps> = ({ image, zoomIn }) => {
   return (
-    <figure className={S.container}>
-      <Image unselectable="on" className={Styles} {...image} />
-    </figure>
+    <S.Container handleButton={zoomIn ?? false}>
+      <Image unselectable="on" {...image} />
+    </S.Container>
   )
 }

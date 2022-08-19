@@ -2,12 +2,12 @@ import type { AppProps } from 'next/app'
 import { FunctionComponent } from 'react'
 import { Provider } from 'react-redux'
 import { store } from '~/modules/redux'
-
-import '~/styles/main.sass'
+import GlobalStyled from '~/modules/styles/global.styled'
 
 const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
   return (
     <Provider store={store}>
+      <GlobalStyled />
       <Component {...pageProps} />
     </Provider>
   )
